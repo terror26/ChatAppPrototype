@@ -116,6 +116,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0z-2u-HYJ">
+                                <rect key="frame" x="0.0" y="10" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8oz-xs-bzd"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Contacts" id="fb6-i4-7uh">
+                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="gfE-xp-xe2">
+                                            <connections>
+                                                <action selector="logoutBtnPressed:" destination="Pjt-mA-qai" id="g0p-Sm-lvb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b9g-jP-lZI">
                                 <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -134,21 +149,6 @@
                                     <outlet property="delegate" destination="Pjt-mA-qai" id="hcc-zn-57a"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0z-2u-HYJ">
-                                <rect key="frame" x="0.0" y="10" width="375" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="8oz-xs-bzd"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Contacts" id="fb6-i4-7uh">
-                                        <barButtonItem key="leftBarButtonItem" title="Logout" id="gfE-xp-xe2">
-                                            <connections>
-                                                <action selector="logoutBtnPressed:" destination="Pjt-mA-qai" id="g0p-Sm-lvb"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -163,7 +163,7 @@
                         <viewLayoutGuide key="safeArea" id="qe2-Gn-LWi"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="b9g-jP-lZI" id="UUQ-aT-orf"/>
+                        <outlet property="tableView" destination="b9g-jP-lZI" id="8LG-el-tv4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkr-zx-frH" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -8,15 +8,23 @@
 
 import UIKit
 
-class ContactsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ContactsVC: UIViewController,UITableViewDelegate,UITableViewDataSource, FetchData {
 
     @IBOutlet weak var tableView: UITableView!
     
     private var contacts = [Contact]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        DBProvider.instance.delegate = self
+        DBProvider.instance.getContacts()
+    }
+    
+    func dataRecieved(contacts: [Contact]) {
+        self.contacts = contacts;
+        tableView.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,6 +38,7 @@ class ContactsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = contacts[indexPath.row].name
         
         return cell
         
@@ -38,7 +47,7 @@ class ContactsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     
 
-   
+    
     @IBAction func logoutBtnPressed(_ sender: Any) {
         if AuthProvider.instance.logOut() {
         dismiss(animated: true, completion: nil)
