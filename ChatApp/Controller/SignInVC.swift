@@ -12,8 +12,10 @@ class SignInVC: UIViewController {
 
     private let CONTACTS_SEGUE = "contactsSegue"
     
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     
     override func viewDidAppear(_ animated: Bool) {
         if AuthProvider.instance.isLogOut() {

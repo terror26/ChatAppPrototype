@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2932A63F1FE800AF0051A154 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2932A63E1FE800AF0051A154 /* ChatVC.swift */; };
 		2966F0C01FE690EE00F6F775 /* DBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2966F0BF1FE690EE00F6F775 /* DBProvider.swift */; };
 		2966F0C21FE691DC00F6F775 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2966F0C11FE691DC00F6F775 /* Constants.swift */; };
 		2966F0C41FE6D3CB00F6F775 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2966F0C31FE6D3CB00F6F775 /* Contact.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		14C925EDCEC9E048662FFEE2 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2932A63E1FE800AF0051A154 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		2966F0BF1FE690EE00F6F775 /* DBProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBProvider.swift; sourceTree = "<group>"; };
 		2966F0C11FE691DC00F6F775 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2966F0C31FE6D3CB00F6F775 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				29F58DFB1FE5590F00558997 /* SignInVC.swift */,
 				29F58E0E1FE573D600558997 /* ContactsVC.swift */,
+				2932A63E1FE800AF0051A154 /* ChatVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2932A63F1FE800AF0051A154 /* ChatVC.swift in Sources */,
 				29F58DFC1FE5590F00558997 /* SignInVC.swift in Sources */,
 				29F58E141FE5B55000558997 /* AuthProvider.swift in Sources */,
 				2966F0C01FE690EE00F6F775 /* DBProvider.swift in Sources */,

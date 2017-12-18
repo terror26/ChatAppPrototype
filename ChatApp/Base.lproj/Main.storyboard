@@ -122,7 +122,7 @@
                                     <constraint firstAttribute="height" constant="50" id="8oz-xs-bzd"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Contacts" id="fb6-i4-7uh">
+                                    <navigationItem title="Members" id="fb6-i4-7uh">
                                         <barButtonItem key="leftBarButtonItem" title="Logout" id="gfE-xp-xe2">
                                             <connections>
                                                 <action selector="logoutBtnPressed:" destination="Pjt-mA-qai" id="g0p-Sm-lvb"/>
@@ -164,11 +164,52 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="b9g-jP-lZI" id="8LG-el-tv4"/>
+                        <segue destination="h61-gg-Re1" kind="show" identifier="ChatSegue" id="hdA-5j-7UE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkr-zx-frH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="815.20000000000005" y="118.29085457271366"/>
+        </scene>
+        <!--Let's Chat-->
+        <scene sceneID="fxo-Lh-I0E">
+            <objects>
+                <viewController id="rgo-KD-6Jq" customClass="ChatVC" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6jp-o7-i5B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tpe-O4-kag"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Let's Chat" id="6jf-ls-KiH">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="6eW-mb-ijM">
+                            <connections>
+                                <action selector="BackBtnPressed:" destination="rgo-KD-6Jq" id="KMb-vd-8IN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dhD-AG-S6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2282" y="117"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ySb-D6-XV6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h61-gg-Re1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z94-sm-TWZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rgo-KD-6Jq" kind="relationship" relationship="rootViewController" id="yvx-jH-bD3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t7h-nR-bkj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1558.4000000000001" y="117.84107946026987"/>
         </scene>
     </scenes>
     <resources>

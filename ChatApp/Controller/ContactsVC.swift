@@ -12,6 +12,7 @@ class ContactsVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Fe
 
     @IBOutlet weak var tableView: UITableView!
     
+    private let CHAT_SEGURE = "ChatSegue"
     private var contacts = [Contact]()
     
     
@@ -24,6 +25,8 @@ class ContactsVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Fe
     
     func dataRecieved(contacts: [Contact]) {
         self.contacts = contacts;
+        
+        //Get the name
         tableView.reloadData()
     }
     
@@ -42,6 +45,10 @@ class ContactsVC: UIViewController,UITableViewDelegate,UITableViewDataSource, Fe
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: CHAT_SEGURE, sender: nil)
     }
     
     
