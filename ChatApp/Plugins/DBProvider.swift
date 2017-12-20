@@ -36,7 +36,7 @@ class DBProvider {
         return ref.child(Constants.MESSAGES)
     }
     
-    var mediaMessagesRed:DatabaseReference {
+    var mediaMessagesRef:DatabaseReference {
         return ref.child(Constants.MEDIA_MESSAGES)
     }
     

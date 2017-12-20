@@ -11,7 +11,7 @@ import JSQMessagesViewController
 import MobileCoreServices
 import AVKit;
 
-class ChatVC:JSQMessagesViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class ChatVC:JSQMessagesViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate,MessageRecivedDelegate {
 
     
     private var messages = [JSQMessage]()
@@ -22,9 +22,11 @@ class ChatVC:JSQMessagesViewController,UINavigationControllerDelegate, UIImagePi
         super.viewDidLoad()
         
         picker.delegate = self
+        MessagesHandler.instance.delegate = self
+        
         self.senderId = AuthProvider.instance.userID()
         self.senderDisplayName = AuthProvider.instance.userName
-        // Do any additional setup after loading the view.
+        MessagesHandler.instance.observeMessage();
     }
 
     //COLLECTION VIEW FUNCTIONS
@@ -123,13 +125,13 @@ class ChatVC:JSQMessagesViewController,UINavigationControllerDelegate, UIImagePi
         
         if let pic = info[UIImagePickerControllerOriginalImage] as?UIImage {
         
-            let img = JSQPhotoMediaItem(image: pic);
-            self.messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, media: img))
-        
-        } else if let vid = info[UIImagePickerControllerMediaURL] as?URL {
+            let data = UIImageJPEGRepresentation(pic, 0.01)
+            MessagesHandler.instance.sendMedia(image: data, video: nil, senderID: senderId, senderName: senderDisplayName);
             
-            let video = JSQVideoMediaItem(fileURL: vid, isReadyToPlay: true)
-            messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName, media: video))
+        
+        } else if let vidURL = info[UIImagePickerControllerMediaURL] as?URL {
+
+            MessagesHandler.instance.sendMedia(image: nil, video: vidURL, senderID: senderId, senderName: senderDisplayName);
             
         }
         
@@ -138,6 +140,15 @@ class ChatVC:JSQMessagesViewController,UINavigationControllerDelegate, UIImagePi
         
     }
     //END PICKER VIEW FUNCTIONS
+    
+    //DELEGATION FUNCTIONS
+    
+    func messageRecieved(senderID: String,senderName:String, text: String) {
+        messages.append(JSQMessage(senderId: senderID, displayName: senderName, text: text))
+        collectionView.reloadData()
+    }
+    
+    //END DELEGATION FUNCTIONS
     
     @IBAction func BackBtnPressed(_ sender: Any) {
         
