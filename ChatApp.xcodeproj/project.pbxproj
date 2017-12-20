@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2915F65B1FEA89F8000E3E4F /* MessagesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2915F65A1FEA89F8000E3E4F /* MessagesHandler.swift */; };
 		2932A63F1FE800AF0051A154 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2932A63E1FE800AF0051A154 /* ChatVC.swift */; };
 		2966F0C01FE690EE00F6F775 /* DBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2966F0BF1FE690EE00F6F775 /* DBProvider.swift */; };
 		2966F0C21FE691DC00F6F775 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2966F0C11FE691DC00F6F775 /* Constants.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		14C925EDCEC9E048662FFEE2 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2915F65A1FEA89F8000E3E4F /* MessagesHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesHandler.swift; sourceTree = "<group>"; };
 		2932A63E1FE800AF0051A154 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		2966F0BF1FE690EE00F6F775 /* DBProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBProvider.swift; sourceTree = "<group>"; };
 		2966F0C11FE691DC00F6F775 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			children = (
 				29F58E131FE5B55000558997 /* AuthProvider.swift */,
 				2966F0BF1FE690EE00F6F775 /* DBProvider.swift */,
+				2915F65A1FEA89F8000E3E4F /* MessagesHandler.swift */,
 			);
 			path = Plugins;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2915F65B1FEA89F8000E3E4F /* MessagesHandler.swift in Sources */,
 				2932A63F1FE800AF0051A154 /* ChatVC.swift in Sources */,
 				29F58DFC1FE5590F00558997 /* SignInVC.swift in Sources */,
 				29F58E141FE5B55000558997 /* AuthProvider.swift in Sources */,

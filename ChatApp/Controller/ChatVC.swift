@@ -22,8 +22,8 @@ class ChatVC:JSQMessagesViewController,UINavigationControllerDelegate, UIImagePi
         super.viewDidLoad()
         
         picker.delegate = self
-        self.senderId = "1"
-        self.senderDisplayName = "Car"
+        self.senderId = AuthProvider.instance.userID()
+        self.senderDisplayName = AuthProvider.instance.userName
         // Do any additional setup after loading the view.
     }
 
@@ -78,8 +78,8 @@ class ChatVC:JSQMessagesViewController,UINavigationControllerDelegate, UIImagePi
     // SENDING BUTTON FUNCTIONS
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         
-        messages.append(JSQMessage(senderId: senderId, displayName: senderDisplayName,text: text));
-        collectionView.reloadData()
+        MessagesHandler.instance.sendMessage(senderID: senderId, senderName: senderDisplayName, text: text)
+        
         //this will remoce the text from the text field
         finishSendingMessage();
         

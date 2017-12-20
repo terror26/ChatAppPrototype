@@ -30,6 +30,8 @@ class AuthProvider {
         return _instance
     }
     
+    var userName = "";
+    
     func login(withEmail : String , password : String, loginHandler : LoginHandler? ) {
         
         Auth.auth().signIn(withEmail: withEmail, password: password, completion: { (user, error) in
@@ -62,6 +64,10 @@ class AuthProvider {
                 }
             }
         })
+    }
+    
+    func userID() -> String {
+        return Auth.auth().currentUser!.uid;
     }
     
     private func handleErrors(err: NSError , loginHandler: LoginHandler?) {
@@ -103,6 +109,7 @@ class AuthProvider {
     } // isLogOut
     
     
+    
     func logOut() -> Bool {
         
         if Auth.auth().currentUser != nil {
@@ -118,29 +125,6 @@ class AuthProvider {
     
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
